@@ -6,7 +6,7 @@
 int* twoSum(int* nums, size_t numsSize, int target, int* returnSize) {
     for (size_t i = 1; i < numsSize; i++) {
         for (size_t j = 0; j < numsSize; j++) {
-            if (i == j || nums[i] + nums[j] != target) 
+            if (nums[i] + nums[j] != target || i == j)  
                 continue;
 
             int *sumIndices = (int*) malloc(2 * sizeof(int));
