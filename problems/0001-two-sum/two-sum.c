@@ -25,11 +25,21 @@ int* twoSum(int* nums, size_t numsSize, int target, int* returnSize) {
 
 void solve() {
     int nums[] = {2, 7, 11, 15};
-    int target = 9;
+    int target = 17;
     int returnSize = 0;
 
     int *sum = twoSum(nums, sizeof(nums), target, &returnSize);
 
+    printf("input: [");
+    size_t numsLength = sizeof(sizeof(nums) / sizeof(int));
+    for (size_t i = 0; i < numsLength - 1; i++) {
+        printf("%d, ", nums[i]);
+    }
+    printf("%d]\n", nums[numsLength - 1]);
+
+    printf("target: %d\n", target);
+
+    printf("output: ");
     if (returnSize == 2)
         printf("[%d, %d]", *sum, *(sum + 1));
     else
