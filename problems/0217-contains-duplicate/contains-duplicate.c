@@ -1,8 +1,9 @@
-#include "problems/0217-contains-duplicate/contains-duplicate.h"
+#include <stdio.h>
+#include "contains-duplicate.h"
 
 bool containsDuplicate(int *nums, size_t numsSize) {
     for (size_t i = 0; i < numsSize / sizeof(int); i++) {
-        for (size_t j = 1; j < numsSize / sizeof(int); j += i) {
+        for (size_t j = i; j < numsSize / sizeof(int); j++) {
             if (nums[i] == nums[j] && i != j)
                 return true;
         }
@@ -13,10 +14,15 @@ bool containsDuplicate(int *nums, size_t numsSize) {
 
 void solve() {
     int nums[] = {1, 2, 2, 4};
-    int nums2[] = {3, 4, 6, 7};
-    int nums3[] = {3, 4, 2, 4};
 
-    bool cd = containsDuplicate(nums, sizeof(nums));
+    bool result = containsDuplicate(nums, sizeof(nums));
 
-    printf("%s", cd);
+    printf("input: [");
+    size_t numsLength = sizeof(sizeof(nums) / sizeof(int));
+    for (size_t i = 0; i < numsLength - 1; i++) {
+        printf("%d, ", nums[i]);
+    }
+    printf("%d]\n", nums[numsLength - 1]);
+
+    printf("output: %s", result ? "true" : "false");
 }
