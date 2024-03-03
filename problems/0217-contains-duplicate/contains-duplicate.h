@@ -4,7 +4,7 @@
 #include <stdbool.h>
 #include <stddef.h>                
 
-bool containsDuplicate(int *nums, int numsSize);
+bool containsDuplicate(int *nums, size_t numsSize);
 
 void solve();
 
